@@ -28,7 +28,7 @@ function HeroSection() {
         <h2 className="bg-white/80 mt-4 px-4 py-1 rounded-full md:text-xl text-xl text-black">Full Stack Developer</h2>
         </div>
 
-      <div className="flex justify-centerg flex-wrap gap-6">
+      <div className="flex justify-center flex-wrap gap-6">
       <a href="https://www.linkedin.com/in/abhishekkumardev91/" target="_blank" >
       <div className="w-16 animate-fade-in-left rounded-full text-white hover:bg-white transition hover:text-blue-600  duration-300 transform hover:scale-110 cursor-pointer flex justify-center items-center h-16 border-4 border-white">
           <a className=" text-2xl "><FaLinkedinIn /> </a>
