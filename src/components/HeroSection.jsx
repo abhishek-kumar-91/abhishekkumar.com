@@ -34,7 +34,7 @@ function HeroSection() {
           <a className=" text-2xl "><FaLinkedinIn /> </a>
         </div></a>
 
-        <a href="https://drive.google.com/file/d/1ZpH8ERXrOYjJ8rkmoZikwEkdSV3sBg64/view" target="_blank">
+        <a href="https://drive.google.com/file/d/1vTeOlWlfpWTi34dGT6Zhyg_XKdlCYsPr/view" target="_blank">
         <div className="w-16 animate-fade-in-left rounded-full text-white hover:bg-white transition hover:text-red-600 cursor-pointer  duration-300 transform hover:scale-110  flex justify-center items-center h-16 border-4 border-white">
           <a className=" text-2xl "><FaRegFilePdf /> </a>
         </div></a>
