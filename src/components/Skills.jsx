@@ -1,102 +1,83 @@
-import React from 'react'
+import React from 'react';
+import { motion } from 'framer-motion';
 
-function Skills() {
+const Skills = () => {
+  const frontendSkills = [
+    'React',
+    'Next.js',
+    'Tailwind CSS',
+    'JavaScript',
+    'TypeScript',
+  ];
+
+  const backendSkills = [
+    'Node.js',
+    'Express',
+    'MongoDB',
+    'MySQL',
+    'AWS',
+    'Git',
+  ];
+
+  const additionalSkills = [
+    'Problem Solving',
+    'Agile Methodologies',
+    'Team Collaboration',
+    'Communication',
+    'UI/UX Design',
+  ];
+  const backgroundAnimation = {
+    initial: {
+      background: 'linear-gradient(to bottom right, #111111, #0a0a0a)',
+    },
+    whileInView: {
+      background: 'linear-gradient(to bottom right, #111111 70%)',
+    },
+    transition: { duration: 0.1, ease: 'easeOut' },
+  };
+
   return (
-    <div className="bg-white py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <h2 className="text-center text-lg font-semibold leading-8 text-gray-900">
+    <motion.div
+      className="py-12 sm:py-20 text-white"
+      initial="initial"
+      whileInView="whileInView"
+      variants={backgroundAnimation}
+    >
+      <div className="mx-auto max-w-5xl px-6 lg:px-8">
+        <h2 className="text-center text-xl font-semibold leading-8 text-gray-100 mb-6">
           My Skills
         </h2>
-        <div className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
-          <img
-            src="./react.webp"
-            width={158}
-            height={48}
-            className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-          />
-           <img
-            src="./node.png"
-            width={158}
-            height={48}
-            className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-          />
-           <img
-            src="./express.png"
-            width={158}
-            height={48}
-            className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-          />
-
-            <img
-            src="./mongo.png"
-            width={158}
-            height={48}
-            className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-          />
-          <img
-            src="./tailwind.png"
-            width={158}
-            height={48}
-            className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-          />
-          <img
-            src="./nextjs.png"
-            width={158}
-            height={48}
-            className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-          />
-          <img
-            src="./typescript.png"
-            width={158}
-            height={48}
-            className="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
-          />
-          <img
-            src="./git.png"
-            width={158}
-            height={48}
-            className="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
-          />
-          <img
-            src="./aws.png"
-            width={158}
-            height={48}
-            className="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
-          />
-          <img
-            src="./mysql.png"
-            width={158}
-            height={48}
-            className="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
-          />
-          <img
-            src="./java.png"
-            width={158}
-            height={48}
-            className="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
-          />
-          <img
-            src="./c.png"
-            width={158}
-            height={48}
-            className="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
-          />
-          <img
-            src="./python.jfif"
-            width={158}
-            height={48}
-            className="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
-          />
-           <img
-            src="./php.png"
-            width={158}
-            height={48}
-            className="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
-          />
+        <div className="flex flex-wrap gap-6 items-center justify-start">
+          <div className="flex-1 min-w-[250px] space-y-3">
+            <h3 className="text-lg font-semibold text-gray-200">Frontend Development</h3>
+            <div className="flex flex-wrap gap-4">
+              {frontendSkills.map((skill, index) => (
+                <div key={index} className="text-gray-300 text-sm">{skill}</div>
+              ))}
+            </div>
+          </div>
+          <div className="hidden md:block border-l-2 border-gray-300 h-full"></div>
+          <div className="flex-1 min-w-[250px] space-y-3">
+            <h3 className="text-lg font-semibold text-gray-200">Backend Development</h3>
+            <div className="flex flex-wrap gap-4">
+              {backendSkills.map((skill, index) => (
+                <div key={index} className="text-gray-300 text-sm">{skill}</div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="my-10 border-b-2 border-gray-300"></div>
+        <div className="space-y-6">
+          <h3 className="text-lg font-semibold text-gray-200">Additional Skills</h3>
+          <div className="flex flex-wrap gap-4">
+            {additionalSkills.map((skill, index) => (
+              <div key={index} className="text-gray-300 text-sm">{skill}</div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
-  )
-}
+    </motion.div>
+  );
+};
 
-export default Skills
+export default Skills;

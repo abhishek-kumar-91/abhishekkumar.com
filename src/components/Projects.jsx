@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import { motion } from 'framer-motion';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
-function Projects() {
-
-  const products = [
+const Projects = () => {
+  const projects = [
     {
       id: 1,
       name: 'Twitter Clone',
@@ -110,41 +111,55 @@ function Projects() {
 
     // More products...
   ]
+
   return (
-    <div id='projects' className="bg-gray-100">
-    <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-      <h2 className="text-2xl font-bold tracking-tight text-gray-900">Projects</h2>
-
-      <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-        {products.map((product) => (
-          <div key={product.id} className="group relative">
-            <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-              <img
-                alt={product.imageAlt}
-                src={product.imageSrc}
-                className="h-full w-full bg-cover lg:h-full lg:w-full"
-              />
-            </div>
-            <div className="mt-4 flex justify-between">
-              <div>
-                <h3 className="text-sm text-gray-700">
-                  <a href={product.href} target='_blank'>
-                    <span aria-hidden="true" className="absolute inset-0" />
-                    {product.name}
+    <section id="projects" className="bg-black py-20 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <motion.h2 
+          className="text-white text-4xl sm:text-5xl font-bold text-center mb-16 tracking-tight"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          Featured Projects
+        </motion.h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          {projects.map(project => (
+            <motion.div
+              key={project.id}
+              className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-2xl shadow-xl overflow-hidden transform transition-transform duration-300 hover:scale-[1.02]"
+              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 50 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="relative w-full h-56 overflow-hidden">
+                <img
+                  src={project.imageSrc}
+                  alt={project.name}
+                  className="object-cover w-full h-full transition-transform duration-300 ease-in-out hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center gap-6 opacity-0 hover:opacity-100 transition-opacity">
+                  <a href={project.github} target="_blank" rel="noopener noreferrer">
+                    <FaGithub className="text-white text-3xl hover:text-gray-400 transition" />
                   </a>
-                </h3>
-                <p className="mt-1 text-sm text-gray-500">{product.color}</p>
+                  {project.live && (
+                    <a href={project.live} target="_blank" rel="noopener noreferrer">
+                      <FaExternalLinkAlt className="text-white text-3xl hover:text-gray-400 transition" />
+                    </a>
+                  )}
+                </div>
               </div>
-              
-            </div>
-           
-          </div>
-         
-        ))}
+              <div className="p-5">
+                <h3 className="text-white text-xl font-semibold mb-2">{project.name}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed min-h-[4px]">{project.tech}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
-    </div>
-  </div>
-  )
-}
+    </section>
+  );
+};
 
-export default Projects
+export default Projects;
