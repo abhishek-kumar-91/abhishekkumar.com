@@ -49,7 +49,7 @@ function HeroSection() {
           <a className="text-2xl "><HiMail /></a>
         </div></a>
 
-        <a href="https://twitter.com/Manojk2Abhishek" target="_blank">
+        <a href="https://twitter.com/HuntByAbhishek" target="_blank">
         <div className="w-16 animate-fade-in-left rounded-full text-white hover:bg-white transition hover:text-sky-500  duration-300 transform hover:scale-110 cursor-pointer  flex justify-center items-center h-16 border-4 border-white">
           <a className="text-2xl "><FaTwitter /> </a>
         </div></a>

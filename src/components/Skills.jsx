@@ -8,6 +8,17 @@ const Skills = () => {
     'Tailwind CSS',
     'JavaScript',
     'TypeScript',
+    'HTML5',
+    'CSS3',
+    'RestAPI',
+    'Redux-Toolkit',
+    'ZoD',
+    'Zustand',
+    'React-Form',
+    'ShadCn',
+    "Jest",
+    'Webpack'
+
   ];
 
   const backendSkills = [
@@ -16,7 +27,16 @@ const Skills = () => {
     'MongoDB',
     'MySQL',
     'AWS',
-    'Git',
+    'Git and Github',
+    'PostgreSQL',
+    'Prisma',
+    'Mongoose',
+    'Kafka',
+    'Redis',
+    'CI/CD',
+    'Jest',
+    'WebSocket',
+    'WebRTC'
   ];
 
   const additionalSkills = [
